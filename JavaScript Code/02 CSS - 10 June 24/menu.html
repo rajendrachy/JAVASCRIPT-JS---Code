@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        nav{
+            background-color: black;
+            color:white;
+            padding:5px 10px;
+            position:relative;
+            /* top:10px; */
+        }
+        nav a{
+            text-decoration: none;
+            color:white;
+        }
+        a.nav-brand{
+            
+            font-weight: bold;
+        }
+
+        nav ul.nav-items{
+            display:inline-block;
+            position:relative;
+        }
+
+        ul.nav-items > li{
+            display:inline-block;
+            padding:5px 15px;
+            cursor:pointer;
+        }
+
+        ul.nav-items .drop-down{
+            position:relative;                        
+        }
+
+        ul.nav-items .drop-down ul{
+            position:absolute;
+            background-color: black;
+            top:20px;   
+            display:none;         
+        }
+        ul.nav-items .drop-down ul li{
+            padding:5px 10px;     
+        }
+
+        ul.nav-items .drop-down:hover ul{
+            display:block;
+        }
+
+        nav .ham{
+            display:none;
+        }
+
+        @media screen and (max-width:600px) {
+            ul.nav-items li{
+                display:none;
+            }
+            ul.nav-items .drop-down ul{
+                position:relative;
+                top:0;  
+
+            }
+
+            ul.nav-items .drop-down ul li{
+                list-style-type: none
+            }
+
+            nav .ham{
+                display:inline-block;
+                position: absolute;
+                top:5%;
+                right:10px;
+            }
+
+            nav .ham:hover + ul.nav-items  li, nav ul.nav-items{
+                display: block;
+                width:100%;                
+                background-color: black;
+            }
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="nav-brand">Logo</a>
+        <i class="ham">☰</i>
+        <ul class="nav-items left">
+            <li>Home</li>
+            <li>About</li>
+            <li class="drop-down"> <a href="#"> Services</a>
+                <ul >
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Mobile Development</a></li>
+                    <li><a href="#">S.E.O</a></li>
+                </ul>
+            </li>
+            <li>Contact</li>
+        </ul>
+       
+    </nav>
+</body>
+</html>
